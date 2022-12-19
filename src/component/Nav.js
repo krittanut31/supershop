@@ -16,7 +16,7 @@ const Nav = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col">
       <div
         className="w-full h-auto flex sticky "
         style={{ backgroundColor: navColor, top: navPosition }}

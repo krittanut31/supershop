@@ -1,10 +1,9 @@
-import Nav from "../component/Nav";
-import Products from "../data/Product";
+import { Products } from "../data/Product";
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Collections = () => {
-  const [title, sTitle] = useState("");
+  const [showBorder, setShowBorder] = useState("All");
 
   return (
     <div className="flex flex-col ">
@@ -29,7 +28,12 @@ const Collections = () => {
                 {Products.map((product) => (
                   <Link
                     to={`${product.path}`}
-                    className="p-4 border border-black rounded-l-full rounded-r-full mb-3"
+                    className={`p-4  ${
+                      showBorder == `${product.name}`
+                        ? " border border-black rounded-l-full rounded-r-full"
+                        : ""
+                    } mb-3`}
+                    onClick={() => setShowBorder(product.name)}
                   >
                     <div>
                       <p>{product.name}</p>

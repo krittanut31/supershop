@@ -25,10 +25,9 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route index element={<App />} />
-        <Route path="#" element={<Nav />}></Route>
-        <Route path="" element={<Home />}>
+        <Route path="" element={<Nav />}>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/collections" element={<Collections />}>
-            <Route path="/collections" element={<Collections />} />
             <Route path="all" element={<All />} />
             <Route path="clothes" element={<Clothes />} />
             <Route path="coat" element={<Coat />} />
