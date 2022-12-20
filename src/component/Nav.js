@@ -16,9 +16,9 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <div
-        className="w-full h-auto flex sticky "
+        className="w-full h-auto flex sticky top-0 "
         style={{ backgroundColor: navColor, top: navPosition }}
       >
         <div className="flex w-full  h-auto my-4 mx-16  ">
@@ -85,7 +85,6 @@ const Nav = () => {
           onClick={toggleNavAbout}
         ></div>
       </div>
-      <Outlet />
     </div>
   );
 };
