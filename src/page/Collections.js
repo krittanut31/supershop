@@ -4,13 +4,14 @@ import { Link, Outlet } from "react-router-dom";
 
 const Collections = () => {
   const [showBorder, setShowBorder] = useState("All");
+  const [showTiltle, setShowTiltle] = useState("All Products");
 
   return (
     <div className="flex flex-col ">
       <div className="bg-[#dce7ed] w-full h-auto ">
         <div className="flex flex-col justify-center  my-4 mx-auto w-[87.5rem]">
           <div className="text-center text-7xl ">
-            <p className="font-bold">All Products</p>
+            <p className="font-bold">{showTiltle}</p>
           </div>
           <div className="text-center my-3 ">
             <p>Build your own plastic–free routine</p>
@@ -33,7 +34,10 @@ const Collections = () => {
                         ? " border border-black rounded-l-full rounded-r-full"
                         : ""
                     } mb-3`}
-                    onClick={() => setShowBorder(product.name)}
+                    onClick={() => {
+                      setShowBorder(product.name);
+                      setShowTiltle(product.title);
+                    }}
                   >
                     <div>
                       <p>{product.name}</p>
