@@ -7,7 +7,7 @@ const Collections = () => {
   const [showTiltle, setShowTiltle] = useState("All Products");
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col mt-20">
       <div className="bg-[#dce7ed] w-full h-auto ">
         <div className="flex flex-col justify-center  my-4 mx-auto w-[87.5rem]">
           <div className="text-center text-7xl ">

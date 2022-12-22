@@ -5,9 +5,7 @@ import { Outlet } from "react-router-dom";
 const App = () => {
   return (
     <div>
-      <Nav />
       <Home />
-      <Outlet />
     </div>
   );
 };
