@@ -21,7 +21,7 @@ const Nav = () => {
         className="w-full h-auto flex fixed top-0  bg-white"
         style={{ backgroundColor: navColor, top: navPosition }}
       >
-        <div className="flex w-full  h-auto my-4 mx-16  ">
+        <div className="flex w-full  h-auto my-5 mx-16  ">
           <div className="flex justify-around  w-full  border border-black px-4">
             <div className="w-full  flex justify-start items-stretch space-x-10 ">
               <Link to="/collections/all" className="flex items-center">
@@ -41,7 +41,7 @@ const Nav = () => {
             </div>
 
             <Link to="/" className="w-full  flex justify-center items-stretch ">
-              <p className="text-4xl font-bold">Bite</p>
+              <p className="text-4xl font-bold ">Bite</p>
             </Link>
 
             <div className="w-full  flex justify-end items-stretch space-x-10">

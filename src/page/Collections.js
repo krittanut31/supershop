@@ -10,16 +10,18 @@ const Collections = () => {
     <div className="flex flex-col mt-20">
       <div className="bg-[#dce7ed] w-full h-auto ">
         <div className="flex flex-col justify-center  my-4 mx-auto w-[87.5rem]">
-          <div className="text-center text-7xl ">
+          <div className="text-center text-8xl ">
             <p className="font-bold">{showTiltle}</p>
           </div>
           <div className="text-center my-3 ">
-            <p>Build your own plastic–free routine</p>
+            <p className="font-semibold text-lg">
+              Build your own plastic–free routine
+            </p>
           </div>
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="flex w-[87.5rem] h-auto ">
+        <div className="flex w-[87.5rem] h-auto mt-16">
           <div className="flex flex-col w-[25%] px-4">
             <div className="flex flex-col">
               <div className="mb-6">
@@ -48,14 +50,6 @@ const Collections = () => {
             </div>
           </div>
           <div className="flex flex-col w-[75%]">
-            <div className="flex">
-              <div className="">
-                <p>Oral Care</p>
-              </div>
-              <div>
-                <p>--------------------- </p>
-              </div>
-            </div>
             <div className="">
               <Outlet />
             </div>
