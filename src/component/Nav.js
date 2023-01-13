@@ -8,19 +8,18 @@ import {
 } from "react-icons/md";
 
 const Nav = () => {
-  const [navColor, setNavColor] = useState("");
-  const [navPosition, setNavPosition] = useState(0);
   const [navAbout, setNavAbout] = useState(false);
+  const [navCart, setNavCart] = useState(false);
   const toggleNavAbout = () => {
     setNavAbout(!navAbout);
+  };
+  const toggleNavCart = () => {
+    setNavCart(!navCart);
   };
 
   return (
     <div className="flex flex-col ">
-      <div
-        className="w-full h-auto flex fixed top-0  bg-white"
-        style={{ backgroundColor: navColor, top: navPosition }}
-      >
+      <div className="w-full h-auto flex fixed top-0  bg-white">
         <div className="flex w-full  h-auto my-5 mx-16  ">
           <div className="flex justify-around  w-full  border border-black px-4">
             <div className="w-full  flex justify-start items-stretch space-x-10 ">
@@ -45,7 +44,10 @@ const Nav = () => {
             </Link>
 
             <div className="w-full  flex justify-end items-stretch space-x-10">
-              <div className="flex items-center">
+              <div
+                className="flex items-center cursor-pointer"
+                onClick={toggleNavCart}
+              >
                 <p className="text-xl font-semibold">Cart</p>
               </div>
 
@@ -56,6 +58,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
+      {/* แทบ About */}
       <div
         className={`flex  h-full w-full fixed top-0 ${
           navAbout ? "left-0 " : "left-[-100%] "
@@ -67,7 +70,7 @@ const Nav = () => {
           <div className="my-auto h-auto">
             <MdKeyboardArrowLeft
               onClick={toggleNavAbout}
-              className="text-3xl border border-black absolute top-3 right-3 rounded-full"
+              className="text-3xl border border-black absolute top-3 right-3 rounded-full cursor-pointer"
             />
             <div className="space-y-2 ml-10">
               <Link to="contact" onClick={toggleNavAbout}>
@@ -85,6 +88,30 @@ const Nav = () => {
           onClick={toggleNavAbout}
         ></div>
       </div>
+      {/* แทบตะกร้า */}
+      <div
+        className={`flex justify-end w-full h-full fixed top-0 ${
+          navCart ? "right-0" : "right-[-100%]"
+        }`}
+      >
+        <div className="flex flex-col justify-between bg-white  w-[40rem] h-full absolute top-0 z-10">
+          <div className="flex my-6 ml-6">
+            <MdClose
+              onClick={toggleNavCart}
+              className="text-3xl border border-black  rounded-full cursor-pointer"
+            />
+            <p className="text-center w-full text-2xl font-semibold">My Cart</p>
+          </div>
+          {/* สินค้าที่เลือก */}
+          <div className="h-full bg-[#dce7ed]"></div>
+          <div className="h-32">total</div>
+        </div>
+        <div
+          className="felx w-full h-full relative z-0 bg-slate-200 opacity-60"
+          onClick={toggleNavCart}
+        ></div>
+      </div>
+
       <Outlet />
     </div>
   );

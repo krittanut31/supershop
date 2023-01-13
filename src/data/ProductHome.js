@@ -6,6 +6,7 @@ const exproduct1 = [
     hoverbackground:
       "https://cdn.shopify.com/s/files/1/1864/2187/files/20.10.19---Angel-GIF-New.gif",
     price: "$8",
+    quantity: 1,
   },
   {
     name: "Body Balm",
@@ -15,6 +16,7 @@ const exproduct1 = [
     hoverbackground:
       "https://cdn.shopify.com/s/files/1/1864/2187/files/22.03.22---Body-Balm-Gif---MC_Bite_BodyBalm40846-1b.gif",
     price: "$7",
+    quantity: 1,
   },
   {
     name: "Cleansing Bar",
@@ -23,6 +25,7 @@ const exproduct1 = [
     hoverbackground:
       "https://cdn.shopify.com/s/files/1/1864/2187/files/body-bar-carousel-crop.gif",
     price: "$3",
+    quantity: 1,
   },
   {
     name: "Deodorant",
@@ -31,6 +34,7 @@ const exproduct1 = [
     hoverbackground:
       "https://cdn.shopify.com/s/files/1/1864/2187/files/deo-carousel-crop.gif",
     price: "$8",
+    quantity: 1,
   },
   {
     name: "Whitening Gel",
@@ -39,6 +43,7 @@ const exproduct1 = [
     hoverbackground:
       "https://cdn.shopify.com/s/files/1/1864/2187/files/21.03.22---Lindsay---Whitening-Gel-Gif.gif",
     price: "$5",
+    quantity: 1,
   },
 ];
 

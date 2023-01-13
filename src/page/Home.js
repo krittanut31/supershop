@@ -2,6 +2,7 @@ import Nav from "../component/Nav";
 import { exproduct1 } from "../data/ProductHome";
 import Card from "../component/Card";
 import { Link } from "react-router-dom";
+import Footer from "../component/Footer";
 
 const Home = () => {
   return (
@@ -126,10 +127,7 @@ const Home = () => {
           <div className="h-[55rem]"></div>
         </div>
       </div>
-      {/* footer */}
-      <div className="mt-32 mx-16">
-        <div>asdas</div>
-      </div>
+      <Footer />
     </div>
   );
 };
