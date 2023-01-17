@@ -16,6 +16,7 @@ import PersonalCare from "./page/Personalcare";
 import GiftSet from "./page/GiftSets";
 import Bundles from "./page/Bundles";
 import Favorites from "./page/Favorites";
+import Checkout from "./page/Checkout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -37,6 +38,7 @@ root.render(
           <Route path="contact" element={<Contact />}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="register" element={<Register />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </BrowserRouter>

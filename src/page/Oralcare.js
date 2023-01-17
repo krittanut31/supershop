@@ -8,13 +8,7 @@ const OralCare = () => {
         <div className="grid grid-cols-3">
           {oralcare.map((oral) => (
             <div className="w-[280px]">
-              <Cardcollection
-                name={oral.name}
-                price={oral.price}
-                type={oral.type}
-                reviews={oral.reviews}
-                bg={oral.bg}
-              />
+              <Cardcollection {...oral} />
             </div>
           ))}
         </div>

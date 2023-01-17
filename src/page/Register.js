@@ -51,7 +51,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex mx-auto justify-center">
+    <div className="flex mx-auto justify-center mt-20 bg-[#dce7ed]">
       <div className="felx w-[50rem] h-auto">
         <div className="flex flex-col m-10  p-10">
           <p className="text-center text-4xl font-bold font-[Arial]">
@@ -66,7 +66,7 @@ const Register = () => {
                   name=""
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="px-4 py-2 text-lg focus:outline-none"
+                  className="px-4 py-2 text-lg focus:outline-none "
                 />
                 <p className={`text-red-500 ${errorName}`}>
                   Invalid or empty name.

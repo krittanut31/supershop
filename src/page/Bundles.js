@@ -8,13 +8,7 @@ const Bundles = () => {
         <div className="grid grid-cols-3">
           {bundles.map((bundle) => (
             <div className="w-[280px]">
-              <Cardcollection
-                name={bundle.name}
-                price={bundle.price}
-                type={bundle.type}
-                reviews={bundle.reviews}
-                bg={bundle.bg}
-              />
+              <Cardcollection {...bundle} />
             </div>
           ))}
         </div>

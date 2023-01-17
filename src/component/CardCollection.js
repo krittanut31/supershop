@@ -5,7 +5,7 @@ const Cardcollection = ({ name, price, type, reviews, bg }) => {
         className="flex   w-[full] h-[400px]  bg-cover bg-repeat bg-center rounded-xl"
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <div className="  flex w-full h-full justify-center mt-6 items-end hover:-translate-y-6 transition hover:delay-100 hover:duration-200 ease-in-out cursor-pointer ">
+        <div className="  flex w-full h-full justify-center mt-6 items-end hover:-translate-y-6 transition hover:delay-100 hover:duration-200 ease-in-out cursor-pointer hover:backdrop-blur-[2px]">
           <button className="  absolute  -z-50 mb-10 border-2 border-black rounded-2xl py-2 px-6 bg-black text-white hover:bg-white hover:text-black text-xl font-medium">
             Add To Cart
           </button>

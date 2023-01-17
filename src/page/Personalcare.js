@@ -8,13 +8,7 @@ const PersonalCare = () => {
         <div className="grid grid-cols-3">
           {personalcare.map((pc) => (
             <div className="w-[280px]">
-              <Cardcollection
-                name={pc.name}
-                price={pc.price}
-                type={pc.type}
-                reviews={pc.reviews}
-                bg={pc.bg}
-              />
+              <Cardcollection {...pc} />
             </div>
           ))}
         </div>

@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Home from "../page/Home";
+import Cart from "./Cart";
+import ProductCart from "./ProductCart";
+import { oralcare, personalcare, bundles, giftsets } from "../data/Product";
 import {
   MdKeyboardArrowDown,
   MdClose,
   MdKeyboardArrowLeft,
+  MdLock,
 } from "react-icons/md";
 
 const Nav = () => {
   const [navAbout, setNavAbout] = useState(false);
   const [navCart, setNavCart] = useState(false);
+  const [total, setTotal] = useState(0);
   const toggleNavAbout = () => {
     setNavAbout(!navAbout);
   };
@@ -17,6 +22,10 @@ const Nav = () => {
     setNavCart(!navCart);
   };
 
+  const showTotal = () => {
+    oralcare.map((oral) => setTotal((total += oral.price)));
+    console.log(total);
+  };
   return (
     <div className="flex flex-col ">
       <div className="w-full h-auto flex fixed top-0  bg-white">
@@ -103,8 +112,36 @@ const Nav = () => {
             <p className="text-center w-full text-2xl font-semibold">My Cart</p>
           </div>
           {/* สินค้าที่เลือก */}
-          <div className="h-full bg-[#dce7ed]"></div>
-          <div className="h-32">total</div>
+          <div className="h-full   p-6 overflow-scroll">
+            {oralcare.map((oral) => (
+              <div>
+                <ProductCart {...oral} />
+              </div>
+            ))}
+            {personalcare.map((personal) => (
+              <ProductCart {...personal} />
+            ))}
+            {bundles.map((bundle) => (
+              <ProductCart {...bundle} />
+            ))}
+            {giftsets.map((gift) => (
+              <ProductCart {...gift} />
+            ))}
+          </div>
+          <div className="h-32 p-6 flex items-center w-full ">
+            <div className="w-[30%]">
+              <p>total</p>
+            </div>
+            <div
+              className="w-full flex justify-center ml-4 border border-black rounded-full py-4"
+              onClick={toggleNavCart}
+            >
+              <MdLock className="text-4xl" />
+              <Link to="checkout" className="ml-5 text-2xl font-semibold ">
+                Continue To Chackout
+              </Link>
+            </div>
+          </div>
         </div>
         <div
           className="felx w-full h-full relative z-0 bg-slate-200 opacity-60"
