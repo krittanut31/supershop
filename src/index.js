@@ -36,10 +36,10 @@ root.render(
           </Route>
           <Route path="page" element={<Page />}></Route>
           <Route path="contact" element={<Contact />}></Route>
-          <Route path="login" element={<Login />}></Route>
-          <Route path="register" element={<Register />} />
-          <Route path="checkout" element={<Checkout />} />
         </Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="register" element={<Register />} />
+        <Route path="checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

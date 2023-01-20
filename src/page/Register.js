@@ -51,7 +51,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex mx-auto justify-center mt-20 bg-[#dce7ed]">
+    <div className="flex mx-auto justify-center  bg-[#dce7ed]">
       <div className="felx w-[50rem] h-auto">
         <div className="flex flex-col m-10  p-10">
           <p className="text-center text-4xl font-bold font-[Arial]">

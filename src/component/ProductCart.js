@@ -8,8 +8,8 @@ const ProductCart = ({ name, price, type, reviews, bg, quantity, id }) => {
         style={{ backgroundImage: `url(${bg})` }}
       ></div>
       <div className="w-[75%] flex flex-col justify-between px-4 mb-4">
-        <div>{name}</div>
-        <div>{type}</div>
+        <div className="font-[sans-serif] text-xl font-semibold">{name}</div>
+        <div className="font-[sans-serif]  italic ">{type}</div>
         <div className="flex justify-between">
           <div className="flex border border-black px-2 rounded-full">
             <MdAdd className="mr-2 mt-1" />

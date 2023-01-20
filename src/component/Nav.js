@@ -24,13 +24,12 @@ const Nav = () => {
 
   const showTotal = () => {
     oralcare.map((oral) => setTotal((total += oral.price)));
-    console.log(total);
   };
   return (
     <div className="flex flex-col ">
       <div className="w-full h-auto flex fixed top-0  bg-white">
         <div className="flex w-full  h-auto my-5 mx-16  ">
-          <div className="flex justify-around  w-full  border border-black px-4">
+          <div className="flex justify-around  w-full   px-4">
             <div className="w-full  flex justify-start items-stretch space-x-10 ">
               <Link to="/collections/all" className="flex items-center">
                 <p className="text-xl font-semibold">Shop</p>
@@ -131,16 +130,19 @@ const Nav = () => {
           <div className="h-32 p-6 flex items-center w-full ">
             <div className="w-[30%]">
               <p>total</p>
+
+              <div></div>
             </div>
-            <div
-              className="w-full flex justify-center ml-4 border border-black rounded-full py-4"
+
+            <Link
+              to="checkout"
+              className="w-full flex justify-center ml-4 border-2 border-black rounded-full py-4 bg-black hover:bg-white 
+              text-white hover:text-black text-2xl font-semibold"
               onClick={toggleNavCart}
             >
-              <MdLock className="text-4xl" />
-              <Link to="checkout" className="ml-5 text-2xl font-semibold ">
-                Continue To Chackout
-              </Link>
-            </div>
+              <MdLock className="text-4xl mr-6" />
+              Continue To Chackout
+            </Link>
           </div>
         </div>
         <div

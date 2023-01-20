@@ -14,7 +14,7 @@ const Cardcollection = ({ name, price, type, reviews, bg }) => {
       <div className="flex justify-between bg-white static z-300">
         <div>
           <p className="font-[sans-serif] text-xl font-semibold mt-2">{name}</p>
-          <p>{type}</p>
+          <p className="font-[sans-serif] italic ">{type}</p>
         </div>
         <div>
           <p className="font-[sans-serif] text-xl font-semibold mt-2">
@@ -24,7 +24,7 @@ const Cardcollection = ({ name, price, type, reviews, bg }) => {
       </div>
       <div>
         <p className="font-[sans-serif] text-sm font-semibold text-slate-400 static z-30">
-          {reviews}
+          Reviews {reviews}
         </p>
       </div>
     </div>
