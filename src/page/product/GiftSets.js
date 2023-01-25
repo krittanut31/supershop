@@ -1,5 +1,5 @@
-import { giftsets } from "../data/Product";
-import Cardcollection from "../component/CardCollection";
+import { giftsets } from "../../data/Product";
+import Cardcollection from "../../component/CardCollection";
 
 const GiftSet = () => {
   return (

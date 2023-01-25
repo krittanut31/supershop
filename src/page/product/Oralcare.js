@@ -1,5 +1,5 @@
-import { oralcare } from "../data/Product";
-import Cardcollection from "../component/CardCollection";
+import { oralcare } from "../../data/Product";
+import Cardcollection from "../../component/CardCollection";
 
 const OralCare = () => {
   return (

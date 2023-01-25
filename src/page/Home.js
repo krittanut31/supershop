@@ -1,10 +1,14 @@
 import Nav from "../component/Nav";
 import { exproduct1 } from "../data/ProductHome";
 import Card from "../component/Card";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Footer from "../component/Footer";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const user = useSelector((state) => state.user);
+
+  console.log(user.id);
   return (
     <div className="">
       <Nav />
@@ -17,14 +21,15 @@ const Home = () => {
               </p>
             </div>
             <div className=" w-[50%] h-auto flex   ">
-              <button
+              <Link
+                to="/collections/all"
                 type=""
                 className="my-8 py-2 px-6 border border-black rounded-full bg-black"
               >
                 <p className="w-full h-full text-xl font-[sans-serif] text-white">
                   Shop Now
                 </p>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

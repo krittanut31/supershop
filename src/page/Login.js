@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setCredentials } from "../slice/user";
 
 const Login = () => {
-  const [checkUsername, setCheckUsername] = useState("");
-  const [checkPassword, setCheckPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const [usernameColor, setUsernameColor] = useState("");
   const [passwordColor, setPasswordColor] = useState("");
@@ -11,19 +13,24 @@ const Login = () => {
   const [errorUsername, setErrorUsername] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
 
-  const Validate = (e) => {
-    e.preventDefault();
-    if (checkUsername.length > 8) {
-      setUsernameColor("");
-      setErrorUsername("");
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
+  if (user.id) return <Navigate to="/"></Navigate>;
+  const validate = () => {
+    if (username.length > 8 && password.length > 8) {
+      dispatch(
+        setCredentials({
+          id: 1,
+          username: username,
+          email: "admin@email.com",
+          profileImage: "ssss,",
+          token: "SSDADCXXDRR",
+        })
+      );
     } else {
       setUsernameColor("red");
       setErrorUsername("Usernam or Email does not exist");
-    }
-    if (checkPassword.length > 8) {
-      setPasswordColor("");
-      setErrorPassword("");
-    } else {
       setPasswordColor("red");
       setErrorPassword("password is incorrect");
     }
@@ -37,13 +44,13 @@ const Login = () => {
             <p className="text-center text-4xl font-bold font-[Arial] ">
               Sign in
             </p>
-            <form className=" h-auto mt-2 p-3 " onSubmit={Validate}>
+            <div className=" h-auto mt-2 p-3 ">
               <div className="">
                 <input
                   type="text"
                   name=""
-                  value={checkUsername}
-                  onChange={(e) => setCheckUsername(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   className=" py-2 text-lg w-full  border border-slate-400 focus:outline-none px-4  rounded-md"
                   placeholder="Usernam/Email"
                 />
@@ -53,10 +60,10 @@ const Login = () => {
               </div>
               <div className="mt-2">
                 <input
-                  type="text"
+                  type="password"
                   name=""
-                  value={checkPassword}
-                  onChange={(e) => setCheckPassword(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className=" py-2 text-lg w-full  border border-slate-400 focus:outline-none px-4 rounded-md"
                   placeholder="Password"
                 />
@@ -66,8 +73,9 @@ const Login = () => {
               </div>
               <div className=" flex justify-center mt-8">
                 <button
-                  type="submit"
+                  type="button"
                   className="border border-black px-3 py-1 w-full rounded-full "
+                  onClick={() => validate()}
                 >
                   <p className="text-slate-600 text-xl">Sign in</p>
                 </button>
@@ -83,7 +91,7 @@ const Login = () => {
                   <p className="text-center text-white">Register</p>
                 </Link>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

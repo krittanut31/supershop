@@ -1,5 +1,5 @@
-import { personalcare } from "../data/Product";
-import Cardcollection from "../component/CardCollection";
+import { personalcare } from "../../data/Product";
+import Cardcollection from "../../component/CardCollection";
 
 const PersonalCare = () => {
   return (

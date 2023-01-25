@@ -1,4 +1,4 @@
-import { favorites } from "../data/Product";
+import { favorites } from "../../data/Product";
 
 const Favorites = () => {
   return (

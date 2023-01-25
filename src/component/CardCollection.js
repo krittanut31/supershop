@@ -1,13 +1,41 @@
-const Cardcollection = ({ name, price, type, reviews, bg }) => {
+import { addItem, removeItem } from "../slice/cart";
+import { useSelector, useDispatch } from "react-redux";
+
+const Cardcollection = ({ name, price, type, reviews, bg, id, quantity }) => {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  const showClick = () => {
+    console.log("clicked");
+    console.log(cart.item);
+  };
   return (
     <div>
       <div
-        className="flex   w-[full] h-[400px]  bg-cover bg-repeat bg-center rounded-xl"
+        className="flex   w-[full] h-[400px]  bg-cover bg-repeat bg-center rounded-xl z-50"
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="  flex w-full h-full justify-center mt-6 items-end hover:-translate-y-6 transition hover:delay-100 hover:duration-200 ease-in-out cursor-pointer hover:backdrop-blur-[2px]">
-          <button className="  absolute  -z-50 mb-10 border-2 border-black rounded-2xl py-2 px-6 bg-black text-white hover:bg-white hover:text-black text-xl font-medium">
+          <button
+            className="  absolute  -z-50 mb-10 border-2 border-black rounded-2xl py-2 px-6 bg-black text-white hover:bg-white hover:text-black text-xl font-medium"
+            onClick={() => {
+              dispatch(
+                addItem({
+                  item: { name, price, type, reviews, bg, id, quantity },
+                })
+              );
+            }}
+          >
             Add To Cart
+          </button>
+          <button
+            className="  absolute  -z-50 mb-40 border-2 border-black rounded-2xl py-2 px-6 bg-black text-white hover:bg-white hover:text-black text-xl font-medium ml-6 "
+            onClick={async () => {
+              dispatch(removeItem());
+              showClick();
+            }}
+          >
+            remove Item
           </button>
         </div>
       </div>

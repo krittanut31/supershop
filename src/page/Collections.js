@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const Collections = () => {
-  const [showBorder, setShowBorder] = useState("All");
+  const [showBorder, setShowBorder] = useState("All Products");
   const [showTiltle, setShowTiltle] = useState("All Products");
 
   return (

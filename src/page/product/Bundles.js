@@ -1,5 +1,5 @@
-import { bundles } from "../data/Product";
-import Cardcollection from "../component/CardCollection";
+import { bundles } from "../../data/Product";
+import Cardcollection from "../../component/CardCollection";
 
 const Bundles = () => {
   return (

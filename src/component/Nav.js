@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Home from "../page/Home";
-import Cart from "./Cart";
 import ProductCart from "./ProductCart";
-import { oralcare, personalcare, bundles, giftsets } from "../data/Product";
 import {
   MdKeyboardArrowDown,
   MdClose,
   MdKeyboardArrowLeft,
   MdLock,
 } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { removeCredentials } from "../slice/user";
+import { addItem, removeItem } from "../slice/cart";
 
 const Nav = () => {
   const [navAbout, setNavAbout] = useState(false);
   const [navCart, setNavCart] = useState(false);
-  const [total, setTotal] = useState(0);
+
   const toggleNavAbout = () => {
     setNavAbout(!navAbout);
   };
@@ -22,9 +23,11 @@ const Nav = () => {
     setNavCart(!navCart);
   };
 
-  const showTotal = () => {
-    oralcare.map((oral) => setTotal((total += oral.price)));
-  };
+  const user = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const total = 0;
+
   return (
     <div className="flex flex-col ">
       <div className="w-full h-auto flex fixed top-0  bg-white">
@@ -60,8 +63,25 @@ const Nav = () => {
               </div>
 
               <Link to="login" className="flex items-center">
-                <p className="text-xl font-semibold">My Accout</p>
+                <p className="text-xl font-semibold">{user.username}</p>
               </Link>
+              {user?.id ? (
+                <div
+                  onClick={() => {
+                    dispatch(removeCredentials());
+                  }}
+                  className=" flex items-center  cursor-pointer px-4 border-2 border-black rounded-full bg-black text-white hover:bg-white hover:text-black"
+                >
+                  <p className="font-semibold">Log out</p>
+                </div>
+              ) : (
+                <Link
+                  to="login"
+                  className="flex items-center cursor-pointer px-4 border-2 border-black rounded-full bg-black text-white hover:bg-white hover:text-black"
+                >
+                  <p className="text-lg font-semibold">Login</p>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -112,19 +132,15 @@ const Nav = () => {
           </div>
           {/* สินค้าที่เลือก */}
           <div className="h-full   p-6 overflow-scroll">
-            {oralcare.map((oral) => (
-              <div>
-                <ProductCart {...oral} />
-              </div>
-            ))}
-            {personalcare.map((personal) => (
-              <ProductCart {...personal} />
-            ))}
-            {bundles.map((bundle) => (
-              <ProductCart {...bundle} />
-            ))}
-            {giftsets.map((gift) => (
-              <ProductCart {...gift} />
+            {cart?.item.map((item) => (
+              <ProductCart
+                quantity={item.quantity}
+                id={item.id}
+                name={item.name}
+                price={item.price}
+                type={item.type}
+                bg={item.bg}
+              />
             ))}
           </div>
           <div className="h-32 p-6 flex items-center w-full ">
