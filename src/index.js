@@ -30,7 +30,7 @@ root.render(
           <Routes>
             <Route index element={<App />} />
             <Route path="/" element={<Nav />}>
-              <Route path="" element={<Home />}></Route>
+              <Route path="" element={<Home />} />
               <Route path="/collections" element={<Collections />}>
                 <Route path="all" element={<All />} />
                 <Route path="oral-care" element={<OralCare />} />

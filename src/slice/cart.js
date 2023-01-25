@@ -8,20 +8,16 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, { payload: { item } }) => {
-      console.log(state.item.includes(item));
-      state.item = [...state.item, item];
-      console.log(state.item);
-      console.log(item.id);
-
-      if (state.item) {
-        for (let i = 0; i < state.item.length; i++) {
-          if (item.id === state.item[i].id) {
-            state.item[i].quantity = item.quantity;
-          }
-        }
+      let itemList = state.item
+      let duplicatedElement = itemList.find(p => p.id === item.id)
+      if (duplicatedElement) {
+        duplicatedElement.quantity += 1
+        let dupIndex = itemList.findIndex(p => p.id === item.id)
+        itemList[dupIndex] = duplicatedElement
       } else {
-        state.item = [...state.item, item];
+        itemList.push(item)
       }
+      state.item = itemList
     },
     removeItem: (state) => {
       state.item = [];

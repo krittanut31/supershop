@@ -4,9 +4,10 @@ import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    // <div>
+    //   SHAJKDHSAJLDHSAJDASHDL
+    // </div>
+    <Home />
   );
 };
 

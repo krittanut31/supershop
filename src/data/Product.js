@@ -21,7 +21,7 @@ const oralcare = [
     type3: "Berry Twist",
     reviews: "19,458",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/22.04.21---Mint-Fluoride---Cart-Image.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const oralcare = [
     type: "Teeth Whitening Kit",
     reviews: "309",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/5_21.05.26---whitening-1--Simple-product-images0858-__May_2021_Untitled-Recipe.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const oralcare = [
     type: "Fresh Mint",
     reviews: "729",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/22081_Mouthwash_Cart.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const oralcare = [
     type: "Toothbrush 2-Pack",
     reviews: "1,467",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/21.05.27---brush-1.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const oralcare = [
     type: "Flass",
     reviews: "506",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/21.05.27---floss-2-pack.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const oralcare = [
     type: "Fresh Mint",
     reviews: "19,458",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/21.05.27---Mint-Bottle-smaller.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
 ];
 
@@ -81,7 +81,7 @@ const personalcare = [
     type4: "Fragrance-Free",
     reviews: "464",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/Deo_Products_Florals_0002_Neroli.jpg",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 8,
@@ -90,7 +90,7 @@ const personalcare = [
     type: "Solid Moisturizer",
     reviews: "23",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/22.03.10---Body-Balm---MC_Bite_BodyBalm40229.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 9,
@@ -99,7 +99,7 @@ const personalcare = [
     type: "Body Bar",
     reviews: "5",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/products/Bite_June_19_LO.jpg?width=250&height=250&crop=center&width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 10,
@@ -108,7 +108,7 @@ const personalcare = [
     type: "",
     reviews: "309",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/products/Bite_June_20_LO.jpg?width=250&height=250&crop=center&width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 11,
@@ -117,7 +117,7 @@ const personalcare = [
     type: "",
     reviews: "309",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/products/Bite_June_21_LO.jpg?width=250&height=250&crop=center&width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
 ];
 
@@ -129,7 +129,7 @@ const bundles = [
     type: "5-piece Oral Care Kit",
     reviews: "21,739",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/21.05.26---Daily-Habits---smaller-8bit.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
 
   {
@@ -139,7 +139,7 @@ const bundles = [
     type: "Toothpaste Bits",
     reviews: "19,458",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/21.05.27---The-Duo-smaller-1.jpg?width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 14,
@@ -148,7 +148,7 @@ const bundles = [
     type: "Gift Set",
     reviews: "13,445",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/Holiday_Starter-Kit_Carousel_2_2400x1920_f666b22d-9dba-4ca3-a8de-f35e975d310e.jpg?v=1667410140",
-    quantity: 0,
+    quantity: 1,
   },
 ];
 
@@ -160,7 +160,7 @@ const giftsets = [
     type: "Gift Set",
     reviews: "",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/Holiday_Best-Sellers_Carousel_2_2400x1920_5add63b8-51eb-461c-9ab5-369523fad8cf.jpg?v=1667410132",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 16,
@@ -169,7 +169,7 @@ const giftsets = [
     type: "Gift Set",
     reviews: "1",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/Holiday_Plastic-Free-Routine_Cart_700x700_5539d48a-1f4e-4032-b1f4-0d9559011258.jpg?v=1667410069&width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 17,
@@ -178,7 +178,7 @@ const giftsets = [
     type: "Gift Set",
     reviews: "12,445",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/Holiday_Starter-Kit_Carousel_2_2400x1920_f666b22d-9dba-4ca3-a8de-f35e975d310e.jpg?v=1667410140",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 18,
@@ -187,7 +187,7 @@ const giftsets = [
     type: "Gift Set",
     reviews: "12,547",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/Holiday_Stocking-Stuffer_Carousel_1_2400x1920_cf7b2c88-9176-498d-b9eb-85f9675d7820.jpg?v=1667410128",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 19,
@@ -196,7 +196,7 @@ const giftsets = [
     type: "Gift Set",
     reviews: "",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/files/Holiday_Body-Bundle_Cart_700x700_66e3bd1e-55de-4658-8d52-284fc3bdb7fd.jpg?v=1667410066&width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
   {
     id: 20,
@@ -205,7 +205,7 @@ const giftsets = [
     type: "Digital Gift Card",
     reviews: "",
     bg: "https://cdn.shopify.com/s/files/1/1864/2187/products/230104_Bite_Gift_Card_Mock_Blue.jpg?v=1673049477&width=750&height=975&crop=center&quality=50",
-    quantity: 0,
+    quantity: 1,
   },
 ];
 
