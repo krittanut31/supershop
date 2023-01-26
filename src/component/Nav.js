@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import Home from "../page/Home";
 import ProductCart from "./ProductCart";
 import {
   MdKeyboardArrowDown,
@@ -34,7 +33,7 @@ const Nav = () => {
         <div className="flex w-full  h-auto my-5 mx-16  ">
           <div className="flex justify-around  w-full   px-4">
             <div className="w-full  flex justify-start items-stretch space-x-10 ">
-              <Link to="/collections/all" className="flex items-center">
+              <Link to="collections/all" className="flex items-center">
                 <p className="text-xl font-semibold">Shop</p>
               </Link>
 
@@ -169,8 +168,6 @@ const Nav = () => {
           onClick={toggleNavCart}
         ></div>
       </div>
-
-      <Outlet />
     </div>
   );
 };

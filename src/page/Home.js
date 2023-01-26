@@ -1,4 +1,3 @@
-import Nav from "../component/Nav";
 import { exproduct1 } from "../data/ProductHome";
 import Card from "../component/Card";
 import { Link, Navigate } from "react-router-dom";
@@ -11,7 +10,6 @@ const Home = () => {
   console.log(user.id);
   return (
     <div className="">
-      <Nav />
       <div className="flex justify-center items-center bg-[url('https://cdn.shopify.com/s/files/1/1864/2187/files/Bite_Holiday_Content1109-16_9.jpg?quality=70')] bg-cover  w-full h-[83vh]">
         <div className=" m-auto h-[55%] w-[75%]">
           <div className="flex flex-col justify-between h-[80%] w-[50%] ml-6 -mt-2">

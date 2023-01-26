@@ -28,10 +28,9 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Routes>
-            <Route index element={<App />} />
-            <Route path="/" element={<Nav />}>
-              <Route path="" element={<Home />} />
-              <Route path="/collections" element={<Collections />}>
+            <Route index element={<App />}>
+              {/* <Route path="" element={<Home />} /> */}
+              <Route path="collections" element={<Collections />}>
                 <Route path="all" element={<All />} />
                 <Route path="oral-care" element={<OralCare />} />
                 <Route path="personal-care" element={<PersonalCare />} />
@@ -40,11 +39,11 @@ root.render(
                 <Route path="favorites" element={<Favorites />} />
               </Route>
               <Route path="page" element={<Page />}></Route>
-              <Route path="contact" element={<Contact />}></Route>
+              <Route path="contact" element={<Contact />} />
+              <Route path="login" element={<Login />}></Route>
+              <Route path="register" element={<Register />} />
+              <Route path="checkout" element={<Checkout />} />
             </Route>
-            <Route path="login" element={<Login />}></Route>
-            <Route path="register" element={<Register />} />
-            <Route path="checkout" element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       </PersistGate>
