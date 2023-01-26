@@ -5,10 +5,6 @@ const Cardcollection = ({ name, price, type, reviews, bg, id, quantity }) => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  const showClick = () => {
-    console.log("clicked");
-    console.log(cart.item);
-  };
   return (
     <div>
       <div
@@ -27,15 +23,6 @@ const Cardcollection = ({ name, price, type, reviews, bg, id, quantity }) => {
             }}
           >
             Add To Cart
-          </button>
-          <button
-            className="  absolute  -z-50 mb-40 border-2 border-black rounded-2xl py-2 px-6 bg-black text-white hover:bg-white hover:text-black text-xl font-medium ml-6 "
-            onClick={async () => {
-              dispatch(removeItem());
-              showClick();
-            }}
-          >
-            remove Item
           </button>
         </div>
       </div>

@@ -60,6 +60,9 @@ const Nav = () => {
                 onClick={toggleNavCart}
               >
                 <p className="text-xl font-semibold">Cart</p>
+                <div className="ml-4 bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-[10px] text-white">
+                  {cart?.quantityAll}
+                </div>
               </div>
 
               <Link to="login" className="flex items-center">
