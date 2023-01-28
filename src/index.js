@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import Home from "./page/Home";
-import Nav from "./component/Nav";
 import Collections from "./page/Collections";
 import All from "./page/product/All";
 import Page from "./page/Page";
@@ -28,8 +27,8 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Routes>
-            <Route index element={<App />}>
-              {/* <Route path="" element={<Home />} /> */}
+            <Route path="" element={<App />}>
+              <Route path="" element={<Home />} />
               <Route path="collections" element={<Collections />}>
                 <Route path="all" element={<All />} />
                 <Route path="oral-care" element={<OralCare />} />
@@ -38,12 +37,12 @@ root.render(
                 <Route path="bundles" element={<Bundles />} />
                 <Route path="favorites" element={<Favorites />} />
               </Route>
-              <Route path="page" element={<Page />}></Route>
-              <Route path="contact" element={<Contact />} />
-              <Route path="login" element={<Login />}></Route>
-              <Route path="register" element={<Register />} />
-              <Route path="checkout" element={<Checkout />} />
             </Route>
+            <Route path="page" element={<Page />}></Route>
+            <Route path="contact" element={<Contact />} />
+            <Route path="login" element={<Login />}></Route>
+            <Route path="register" element={<Register />} />
+            <Route path="checkout" element={<Checkout />} />
           </Routes>
         </BrowserRouter>
       </PersistGate>
