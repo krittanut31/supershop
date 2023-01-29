@@ -6,9 +6,9 @@ const Cardcollection = ({ name, price, type, reviews, bg, id, quantity }) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="mb-6">
       <div
-        className="flex   w-[full] h-[400px]  bg-cover bg-repeat bg-center rounded-xl z-50"
+        className="flex  w-[full] h-[400px]  bg-cover bg-repeat bg-center rounded-xl z-50"
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="  flex w-full h-full justify-center mt-6 items-end hover:-translate-y-6 transition hover:delay-100 hover:duration-200 ease-in-out cursor-pointer hover:backdrop-blur-[2px]">
@@ -33,6 +33,7 @@ const Cardcollection = ({ name, price, type, reviews, bg, id, quantity }) => {
         </div>
         <div>
           <p className="font-[sans-serif] text-xl font-semibold mt-2">
+            {"$"}
             {price}
           </p>
         </div>

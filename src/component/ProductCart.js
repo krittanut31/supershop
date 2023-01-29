@@ -41,7 +41,10 @@ const ProductCart = ({ name, price, type, reviews, bg, quantity, id }) => {
               }}
             />
           </div>
-          <div>{price}</div>
+          <div className="font-semibold text-2xl">
+            {"$"}
+            {price}
+          </div>
         </div>
       </div>
     </div>

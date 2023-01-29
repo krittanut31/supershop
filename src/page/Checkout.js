@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import ProductCheckout from "../component/ProductCheckout";
+import { oralcare } from "../data/Product";
+
 const Checkout = () => {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   return (
     <div className=" w-full h-auto flex flex-col">
       <div className="w-full h-28 flex items-end justify-center">
@@ -204,7 +210,54 @@ const Checkout = () => {
               </div>
             </form>
           </div>
-          <div className="w-[50%] bg-slate-300"></div>
+          <div className="w-[50%] py-4 pl-6 ">
+            <div className="w-full flex flex-col bg-slate-300 py-4 px-8">
+              <div className="py-4 font-semibold text-2xl">Order summary</div>
+              <div className="overflow-y-auto h-[40rem]">
+                {cart?.item.map((item) => (
+                  <ProductCheckout
+                    quantity={item.quantity}
+                    id={item.id}
+                    name={item.name}
+                    price={item.price}
+                    type={item.type}
+                    bg={item.bg}
+                  />
+                ))}
+              </div>
+              <div className="mt-8">
+                <div className="flex justify-between my-1">
+                  <div>Subtotal</div>
+                  <div>
+                    {"$"}
+                    {cart.totalPrice}
+                  </div>
+                </div>
+                <div className="flex justify-between my-1">
+                  <div>Shipping </div>
+                  <div>{cart.totalPrice}</div>
+                </div>
+                <div className="flex justify-between my-1">
+                  <div>Taxes</div>
+                  <div>{cart.totalPrice}</div>
+                </div>
+              </div>
+              <div className="flex justify-between mt-8">
+                <div>Total</div>
+                <div>
+                  {"$"}
+                  {cart.totalPrice}
+                </div>
+              </div>
+              <div className="flex justify-between mt-8">
+                <div>Payment Due</div>
+                <div>
+                  {"$"}
+                  {cart.totalPrice}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-full h-16 flex justify-center items-center border-t border-black">

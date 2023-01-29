@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 const Home = () => {
   const user = useSelector((state) => state.user);
 
-  console.log(user.id);
   return (
     <div className="">
       <div className="flex justify-center items-center bg-[url('https://cdn.shopify.com/s/files/1/1864/2187/files/Bite_Holiday_Content1109-16_9.jpg?quality=70')] bg-cover  w-full h-[83vh]">

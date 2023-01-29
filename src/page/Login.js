@@ -17,8 +17,9 @@ const Login = () => {
   const user = useSelector((state) => state.user);
 
   if (user.id) return <Navigate to="/"></Navigate>;
+
   const validate = () => {
-    if (username.length > 8 && password.length > 8) {
+    if (username.length >= 8 && password.length >= 8) {
       dispatch(
         setCredentials({
           id: 1,

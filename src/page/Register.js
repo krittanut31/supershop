@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Register = () => {
-  const [name, setName] = useState("");
-  const [lastname, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,12 +18,12 @@ const Register = () => {
 
   const validate = (e) => {
     e.preventDefault();
-    if (name.length > 0) {
+    if (firstName.length > 0) {
       setErrorName("hidden");
     } else {
       setErrorName("");
     }
-    if (lastname.length > 0) {
+    if (lastName.length > 0) {
       setErrorLastname("hidden");
     } else {
       setErrorLastname("");
@@ -64,8 +64,8 @@ const Register = () => {
                 <input
                   type="text"
                   name=""
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                   className="px-4 py-2 text-lg focus:outline-none "
                 />
                 <p className={`text-red-500 ${errorName}`}>
@@ -77,7 +77,7 @@ const Register = () => {
                 <input
                   type="text"
                   name=""
-                  value={lastname}
+                  value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   className="px-4 py-2 text-lg focus:outline-none"
                 />
@@ -115,7 +115,7 @@ const Register = () => {
             <div className="w-full mt-3">
               <p>Password</p>
               <input
-                type="text"
+                type="password"
                 name=""
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -128,7 +128,7 @@ const Register = () => {
             <div className="w-full mt-3">
               <p>Repassword</p>
               <input
-                type="text"
+                type="password"
                 name=""
                 value={repassword}
                 onChange={(e) => setRepassword(e.target.value)}

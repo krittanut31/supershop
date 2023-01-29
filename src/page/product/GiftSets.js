@@ -7,7 +7,7 @@ const GiftSet = () => {
       <div className=" bg-cover w-full h-auto">
         <div className="grid grid-cols-3">
           {giftsets.map((gift) => (
-            <div className="w-[280px]">
+            <div className="w-[320px]">
               <Cardcollection {...gift} />
             </div>
           ))}

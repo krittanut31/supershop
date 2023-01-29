@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ProductCart from "./ProductCart";
 import {
   MdKeyboardArrowDown,
@@ -9,11 +9,11 @@ import {
 } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { removeCredentials } from "../slice/user";
-import { addItem, removeItem } from "../slice/cart";
 
 const Nav = () => {
   const [navAbout, setNavAbout] = useState(false);
   const [navCart, setNavCart] = useState(false);
+  const [navBackground, setNavBackground] = useState(false);
 
   const toggleNavAbout = () => {
     setNavAbout(!navAbout);
@@ -25,11 +25,26 @@ const Nav = () => {
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const total = 0;
+  const changeBackground = () => {
+    if (window.scrollY > 0) {
+      setNavBackground(true);
+    } else {
+      setNavBackground(false);
+    }
+  };
+
+  useEffect(() => {
+    changeBackground();
+    window.addEventListener("scroll", changeBackground);
+  });
 
   return (
     <div className="flex flex-col ">
-      <div className="w-full h-auto flex fixed top-0  bg-white">
+      <div
+        className={`w-full h-auto flex fixed top-0  ${
+          navBackground ? "bg-white" : "bg-transparent"
+        }`}
+      >
         <div className="flex w-full  h-auto my-5 mx-16  ">
           <div className="flex justify-around  w-full   px-4">
             <div className="w-full  flex justify-start items-stretch space-x-10 ">
@@ -59,9 +74,13 @@ const Nav = () => {
                 onClick={toggleNavCart}
               >
                 <p className="text-xl font-semibold">Cart</p>
-                <div className="ml-4 bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-[10px] text-white">
-                  {cart?.quantityAll}
-                </div>
+                {cart?.quantityAll > 0 ? (
+                  <div className="absolute ml-8 mb-5 bg-red-500 border-2 border-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] text-white">
+                    {cart?.quantityAll}
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
 
               <Link to="login" className="flex items-center">
@@ -90,8 +109,8 @@ const Nav = () => {
       </div>
       {/* แทบ About */}
       <div
-        className={`flex  h-full w-full fixed top-0 ${
-          navAbout ? "left-0 " : "left-[-100%] "
+        className={`  h-full w-full fixed top-0 ${
+          navAbout ? "flex" : "hidden "
         }`}
       >
         <div
@@ -114,14 +133,14 @@ const Nav = () => {
           </div>
         </div>
         <div
-          className=" felx w-full h-full relative z-0 bg-slate-200 opacity-60  "
+          className="  w-full h-full  bg-slate-200 opacity-60  "
           onClick={toggleNavAbout}
         ></div>
       </div>
       {/* แทบตะกร้า */}
       <div
-        className={`flex justify-end w-full h-full fixed top-0 ${
-          navCart ? "right-0" : "right-[-100%]"
+        className={` justify-end w-full h-full fixed top-0 ${
+          navCart ? "flex" : "hidden"
         }`}
       >
         <div className="flex flex-col justify-between bg-white  w-[40rem] h-full absolute top-0 z-10">
@@ -133,7 +152,7 @@ const Nav = () => {
             <p className="text-center w-full text-2xl font-semibold">My Cart</p>
           </div>
           {/* สินค้าที่เลือก */}
-          <div className="h-full   p-6 overflow-scroll">
+          <div className="h-full   p-6 overflow-y-scroll">
             {cart?.item.map((item) => (
               <ProductCart
                 quantity={item.quantity}
@@ -146,10 +165,12 @@ const Nav = () => {
             ))}
           </div>
           <div className="h-32 p-6 flex items-center w-full ">
-            <div className="w-[30%]">
-              <p>total</p>
-
-              <div></div>
+            <div className="w-[30%] flex flex-col pl-8 ">
+              <p className="text-xs font-medium text-slate-500 ">SUBTOTAL</p>
+              <div className="font-semibold text-2xl">
+                {"$"}
+                {cart?.totalPrice}
+              </div>
             </div>
 
             <Link
