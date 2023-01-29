@@ -4,8 +4,6 @@ import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
-    // <div>SHAJKDHSAJLDHSAJDASHDL</div>
-    // <Home />
     <>
       <Nav />
       <Outlet />

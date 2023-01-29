@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "../slice/user";
+import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -16,7 +17,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
-  if (user.id) return <Navigate to="/"></Navigate>;
+  //if (user.id) return <Navigate to="/"></Navigate>;
 
   const validate = () => {
     if (username.length >= 8 && password.length >= 8) {
@@ -37,6 +38,21 @@ const Login = () => {
     }
   };
 
+  const login = () => {
+    axios
+      .post("/api/login", {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        console.log(response);
+        // console.log(response.data.token);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="w-full   h-[100vh] bg-[#dce7ed]">
       <div className="flex   justify-center ">
@@ -53,7 +69,7 @@ const Login = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className=" py-2 text-lg w-full  border border-slate-400 focus:outline-none px-4  rounded-md"
-                  placeholder="Usernam/Email"
+                  placeholder="Username/Email"
                 />
                 <p className={`text-sm  text-${usernameColor}-500 `}>
                   {errorUsername}
@@ -76,7 +92,10 @@ const Login = () => {
                 <button
                   type="button"
                   className="border border-black px-3 py-1 w-full rounded-full "
-                  onClick={() => validate()}
+                  onClick={() => {
+                    validate();
+                    login();
+                  }}
                 >
                   <p className="text-slate-600 text-xl">Sign in</p>
                 </button>

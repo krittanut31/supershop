@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -48,6 +49,29 @@ const Register = () => {
     } else {
       setErrorRepassword("");
     }
+  };
+
+  const register = () => {
+    console.log(username);
+    console.log(password);
+    console.log(email);
+    console.log(firstName);
+    console.log(lastName);
+    axios
+      .post("/api/register", {
+        username: username,
+        password: password,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+      })
+      .then((response) => {
+        console.log(response);
+        // console.log(response.data.username);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -142,6 +166,7 @@ const Register = () => {
               <button
                 type="submit"
                 className="w-full py-2 px-3 bg-[#0aa2ee] border border-black rounded-full text-white"
+                onClick={() => register()}
               >
                 Create
               </button>

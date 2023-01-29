@@ -9,6 +9,7 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, { payload: { item } }) => {
+      // state.item = [...state.item, item];
       let quantityItem = state.quantityAll;
       let itemList = state.item;
       let total = state.totalPrice;
@@ -30,6 +31,7 @@ export const cartSlice = createSlice({
       state.totalPrice = total;
     },
     removeItem: (state, { payload: { item } }) => {
+      // state.item = [];
       let quantityItem = state.quantityAll;
       let itemList = state.item;
       let total = state.totalPrice;

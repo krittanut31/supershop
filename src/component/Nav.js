@@ -185,7 +185,7 @@ const Nav = () => {
           </div>
         </div>
         <div
-          className="felx w-full h-full relative z-0 bg-slate-200 opacity-60"
+          className="felx w-full h-full relative z-0 bg-slate-100 opacity-80"
           onClick={toggleNavCart}
         ></div>
       </div>
